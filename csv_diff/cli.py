@@ -19,7 +19,7 @@ from . import load_csv, compare, human_text
 )
 @click.option(
     "--format",
-    type=click.Choice(["csv", "tsv","psv"]),
+    type=click.Choice(["csv", "tsv", "psv"]),
     default=None,
     help="Explicitly specify input format (csv, tsv, psv) instead of auto-detecting",
 )
@@ -46,7 +46,7 @@ from . import load_csv, compare, human_text
 def cli(previous, current, key, format, json, singular, plural, show_unchanged):
     "Diff two CSV files"
 
- csv.register_dialect('excel-pipe', delimiter='|', quoting=csv.QUOTE_NONE)
+    csv.register_dialect('excel-pipe', delimiter='|', quoting=csv.QUOTE_NONE)
     dialect = {
         "csv": "excel",
         "tsv": "excel-tab",
